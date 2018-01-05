@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>    
+	<head>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />   
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />   
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" />   <meta name="apple-mobile-web-app-capable" content="yes" />   
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />   
+		<meta name="format-detection" content="telephone=no" />   
+		<meta http-equiv="refresh" content= window.onresize>
+
+		<title>YANA'S HOMEPAGE</title>
+
+		<style type="text/css">
+			div.pos_abs
+			{
+			position:absolute;
+			left:280px;
+			top:950px
+			}
+		</style>
+
+
+		<script type="text/javascript"> //define functions
+
+		var docw = document.documentElement.clientWidth; //original data 770 px
+		var doch = document.documentElement.clientHeight;
+		var ori_w = 770;
+		var Ratio = docw/ori_w;
+
+		// alert(docw);
+		// alert(doch);
+
+		var _canvasInitialW = 750;
+		var _canvasInitialH = 1035;
+		var _canvasRatio = _canvasInitialW / _canvasInitialH;
+		var _border = 10 * Ratio;
+		var _blockW = 730 * Ratio;
+		var _blockH = 120 * Ratio;
+		var _blockBeginer = 810 * Ratio;
+		var _leftText = 140 * Ratio;
+		var _topText = 70 * Ratio;
+		var _imageW = 100 * Ratio;
+		var _imageH = 100 * Ratio;
+
+
+
+
+		var urlList = new Array();
+		urlList[0] = "https://shimo.im/doc/SN5bUNMiMOMOsiQz";
+		urlList[1] = "https://shimo.im/doc/cU0Pk57eS98JmEVr";
+		urlList[2] = "https://shimo.im/doc/QqghcDOxIiUCStQP";
+		urlList[3] = "https://shimo.im/doc/rEPxKEH8EcIjN14N";
+		urlList[4] = "https://shimo.im/doc/Vfc3JJSLlFYtauAG";
+
+
+
+		var title1 = "少儿在线外教1-1的能与不能";
+		var title2 = "儿童音乐启蒙方法论";
+		var title3 = "儿教育游戏化";
+		var title4 = "K12 EDU到底有没有痛点";
+		var title5 = "K12 EDU不能称之为互联网行业？";
+
+
+		// var title1 = "1234567";
+		// var title2 = "b";
+		// var title3 = "c";
+
+		function drawLine(ctx, beginX, beginY, endX, endY, lineW) {
+			ctx.beginPath();
+			ctx.lineWidth = lineW;
+			ctx.moveTo(beginX, beginY);
+			ctx.lineTo(endX, endY);
+			ctx.stroke();
+		}
+
+
+		function drawImg(ctx, imageName, posX, posY, imageW, imageH) {
+			var img = new Image();
+			img.src = imageName;
+			img.onload = function() { ctx.drawImage(img, posX, posY, imageW, imageH)};
+		}
+
+
+
+		function drawBlock(ctx, imageName, posX, posY, imageW, imageH, title) {
+			ctx.fillStyle = '#FFFFFF';
+			ctx.fillRect(posX + _border, posY, posX + _blockW, _blockH);
+
+			drawImg(ctx, imageName, posX + 2*_border, posY + _border, imageW, imageH);
+
+			ctx.fillStyle = "#A1A1A1";
+			ctx.font = 30 * Ratio + 'px ' + "Arial";
+			ctx.textAlign = "left";
+			ctx.fillText(title, posX + _leftText, posY + _topText);
+		
+		}
+
+
+
+		</script>
+		
+
+	</head>
+
+	<body width = 100% height = 100% margin = 0px>
+		
+			<canvas id="mainBackground" width= _canvasWidth height= _canvasHeigh></canvas>
+			<!-- <canvas id="mainBackground" ></canvas> -->
+
+				<script type="text/javascript">
+
+				// window.onresize = function(e) {
+
+				var c=document.getElementById("mainBackground");
+				var ctx=c.getContext("2d");
+				// ctx.canvas.width = window.innerWidth;
+				ctx.canvas.width = _canvasInitialW * Ratio;
+				ctx.canvas.height = _canvasInitialH * Ratio / _canvasRatio;
+				
+			
+				
+				ctx.strokeRect(0,0,_canvasInitialW * Ratio,2000 * Ratio); //draw the outline
+
+				drawLine(ctx, 50 * Ratio, 100 * Ratio, 700 * Ratio, 100 * Ratio, 0.4); //draw the top line
+
+		
+
+				// ctx.beginPath(); //draw the circle
+				// ctx.lineWidth=1;
+				// ctx.arc(370,250,80,0,2*Math.PI);
+				// ctx.fillStyle='#A1A1A1';
+				// ctx.fill();
+
+
+				drawImg(ctx, "head1.png", 290 * Ratio, 170 * Ratio, 160 * Ratio, 160 * Ratio); //draw the image of head
+
+				
+				drawLine(ctx, 300 * Ratio, 450 * Ratio, 440 * Ratio, 450 * Ratio, 1); //draw the line under name
+	
+				drawImg(ctx, "imyana.png", 100 * Ratio, 350 * Ratio, 550 * Ratio, 60 * Ratio); //draw the image of imyana
+
+
+				// ctx.font="20px Arial"; //txt introduction
+				ctx.font = 30 * Ratio + 'px ' + "Arial";
+
+				ctx.textAlign = "center";
+				ctx.fillText("Product Manager",370 * Ratio,545 * Ratio);
+				ctx.fillText("Bachelor in Computer Science",370 * Ratio,570 * Ratio);
+				// ctx.fillText("now is on an Online-EDU project",370,595);
+
+
+				ctx.beginPath(); //draw the rect to split contents
+				ctx.fillRect(0,720 * Ratio,750 * Ratio,80 * Ratio);
+
+				ctx.fillStyle='#FFFFFF'; //txt on rect
+				ctx.font = 50 * Ratio + 'px ' + "Arial";
+				ctx.fillText("ORIGINAL ARTICAL",370 * Ratio,780 * Ratio);
+
+				ctx.beginPath(); // fill the background
+				ctx.fillStyle="#EBEBEB";
+				ctx.fillRect(0,800 * Ratio,750 * Ratio, 1200 * Ratio);
+
+
+				drawBlock(ctx, "img5.png", 0, 810 * Ratio, _imageW, _imageH, title1);
+				drawBlock(ctx, "img3.png", 0, 810 * Ratio + _blockH, _imageW, _imageH, title2);
+				drawBlock(ctx, "img4.png", 0, 810 * Ratio + 2 *_blockH, _imageW, _imageH, title3);
+				drawBlock(ctx, "img1.png", 0, 810 * Ratio + 3 *_blockH, _imageW, _imageH, title4);
+				drawBlock(ctx, "img7.png", 0, 810 * Ratio + 4 *_blockH, _imageW, _imageH, title5);
+
+
+
+
+
+				mainBackground.onclick = function(e) { //捕捉点击事件
+					e = e || event;
+
+					var x = e.offsetX;
+					var y = e.offsetY;
+
+
+					var listIndex  = Math.floor( (y - _blockBeginer) / _blockH );
+					if(listIndex >= 0) {
+						window.open(urlList[listIndex]); //打开文章链接
+
+					}
+
+				}
+
+
+			
+
+
+
+				</script>
+	
+	</body>
+
+</html>
