@@ -48,19 +48,55 @@
 
 
 		var urlList = new Array();
-		urlList[0] = "https://shimo.im/doc/SN5bUNMiMOMOsiQz";
-		urlList[1] = "https://shimo.im/doc/cU0Pk57eS98JmEVr";
-		urlList[2] = "https://shimo.im/doc/QqghcDOxIiUCStQP";
-		urlList[3] = "https://shimo.im/doc/rEPxKEH8EcIjN14N";
-		urlList[4] = "https://shimo.im/doc/Vfc3JJSLlFYtauAG";
+		urlList[1] = "https://shimo.im/doc/SN5bUNMiMOMOsiQz";
+		urlList[2] = "https://shimo.im/doc/cU0Pk57eS98JmEVr";
+		urlList[3] = "https://shimo.im/doc/QqghcDOxIiUCStQP";
+		urlList[4] = "https://shimo.im/doc/rEPxKEH8EcIjN14N";
+		urlList[5] = "https://shimo.im/doc/Vfc3JJSLlFYtauAG";
+		
+		urlList[6] = "https://shimo.im/doc/BBq61469t90GHmxA";
+		urlList[7] = "https://shimo.im/doc/ZzQ7ewTZl7Y24siJ";
+		urlList[8] = "https://shimo.im/doc/0xEmYAtDuzUvrULi";
+		urlList[9] = "https://shimo.im/doc/s601LfYaAYMmgZwX";
+		urlList[10] = "https://shimo.im/doc/uUENK4VSfbwJ9HZs";
+
+		urlList[11] = "https://shimo.im/doc/n1lLGlYUfeA3inno";
+		urlList[12] = "https://shimo.im/doc/bSdesJH8Q48kLG5x";
+		urlList[13] = "https://shimo.im/doc/Qwp22iZ1tYQ0mKH5";
+		urlList[14] = "https://shimo.im/doc/2LKjIYvkxNYBdQsW";
+		urlList[15] = "https://shimo.im/doc/4IzWqusqVdcy5FkN";
+		urlList[16] = "https://shimo.im/doc/R1RTlXl7U10V5Aqq";
+		urlList[17] = "https://shimo.im/doc/OblBO3T0lOQOar2f";
+		urlList[18] = "https://shimo.im/doc/G1VRZoprGYkY8X2u";
+		urlList[19] = "https://shimo.im/doc/xleQ9RBO5eQPWmlC";
+		urlList[20] = "https://shimo.im/doc/4zQVxGJDPZQm4fyt";
 
 
 
-		var title1 = "少儿在线外教1-1的能与不能";
-		var title2 = "儿童音乐启蒙方法论";
-		var title3 = "儿教育游戏化";
-		var title4 = "K12 EDU到底有没有痛点";
-		var title5 = "K12 EDU不能称之为互联网行业？";
+		var titleList = new Array();
+		var titleList[1] = "少儿在线外教1-1的能与不能";
+		var titleList[2] = "儿童音乐启蒙方法论";
+		var titleList[3] = "儿教育游戏化";
+		var titleList[4] = "K12 EDU到底有没有痛点";
+		var titleList[5] = "K12 EDU不能称之为互联网行业？";
+
+		var titleList[6] = "大道至简·《长短经》读后";
+		var titleList[7] = "《培训行业这一年》读后";
+		var titleList[8] = "用无用·《长短经》读后";
+		var titleList[9] = "《Crucial Conversation》读后";
+		var titleList[10] = "《语言的魔力》读后";
+
+		var titleList[11] = "PM职业生涯规划";
+		var titleList[12] = "外行的思考方式 ";
+		var titleList[13] = "校招产品面试技巧-临门一脚";
+		var titleList[14] = "关于presentation";
+		var titleList[15] = "苍老师很辛苦——做技能培训的X个不要";
+		var titleList[16] = "How to Present a talk with PPT";
+		var titleList[17] = "一个逗比PM的日常";
+		var titleList[18] = "用户调研问答";
+		var titleList[19] = "“开个会半个小时根本不够”";
+		var titleList[20] = "《道教》";
+
 
 
 		// var title1 = "1234567";
@@ -163,11 +199,12 @@
 				ctx.fillRect(0,800 * Ratio,750 * Ratio, 1200 * Ratio);
 
 
-				drawBlock(ctx, "img5.png", 0, 810 * Ratio, _imageW, _imageH, title1);
-				drawBlock(ctx, "img3.png", 0, 810 * Ratio + _blockH, _imageW, _imageH, title2);
-				drawBlock(ctx, "img4.png", 0, 810 * Ratio + 2 *_blockH, _imageW, _imageH, title3);
-				drawBlock(ctx, "img1.png", 0, 810 * Ratio + 3 *_blockH, _imageW, _imageH, title4);
-				drawBlock(ctx, "img7.png", 0, 810 * Ratio + 4 *_blockH, _imageW, _imageH, title5);
+
+				drawBlock(ctx, "img5.png", 0, 810 * Ratio, _imageW, _imageH, titleList[1]);
+				drawBlock(ctx, "img3.png", 0, 810 * Ratio + _blockH, _imageW, _imageH, titleList[2]);
+				drawBlock(ctx, "img4.png", 0, 810 * Ratio + 2 *_blockH, _imageW, _imageH, titleList[3]);
+				drawBlock(ctx, "img1.png", 0, 810 * Ratio + 3 *_blockH, _imageW, _imageH, titleList[4]);
+				drawBlock(ctx, "img7.png", 0, 810 * Ratio + 4 *_blockH, _imageW, _imageH, titleList[5]);
 
 
 
@@ -180,8 +217,8 @@
 					var y = e.offsetY;
 
 
-					var listIndex  = Math.floor( (y - _blockBeginer) / _blockH );
-					if(listIndex >= 0) {
+					var listIndex  = Math.floor( (y - _blockBeginer) / _blockH ) + 1;
+					if(listIndex >= 1) {
 						window.open(urlList[listIndex]); //打开文章链接
 
 					}
