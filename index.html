@@ -32,8 +32,10 @@
 		// alert(docw);
 		// alert(doch);
 
+		var total = 20
 		var _canvasInitialW = 750;
-		var _canvasInitialH = 1035;
+		// var _canvasInitialH = 1035;
+		var _canvasInitialH = 1555;
 		var _canvasRatio = _canvasInitialW / _canvasInitialH;
 		var _border = 10 * Ratio;
 		var _blockW = 730 * Ratio;
@@ -43,6 +45,7 @@
 		var _topText = 70 * Ratio;
 		var _imageW = 100 * Ratio;
 		var _imageH = 100 * Ratio;
+
 
 
 
@@ -199,14 +202,12 @@
 				ctx.fillRect(0,800 * Ratio,750 * Ratio, 1200 * Ratio);
 
 
+				for (var i = 1;i <= total; i++) {
+					var imageIndex = "img" + i + ".png";
+				
+					drawBlock(ctx, imageIndex, 0, 810 * Ratio + (i - 1) * _blockH, _imageW, _imageH, titleList[i]);
 
-				drawBlock(ctx, "img5.png", 0, 810 * Ratio, _imageW, _imageH, titleList[1]);
-				drawBlock(ctx, "img3.png", 0, 810 * Ratio + _blockH, _imageW, _imageH, titleList[2]);
-				drawBlock(ctx, "img4.png", 0, 810 * Ratio + 2 *_blockH, _imageW, _imageH, titleList[3]);
-				drawBlock(ctx, "img1.png", 0, 810 * Ratio + 3 *_blockH, _imageW, _imageH, titleList[4]);
-				drawBlock(ctx, "img7.png", 0, 810 * Ratio + 4 *_blockH, _imageW, _imageH, titleList[5]);
-
-
+				}
 
 
 
